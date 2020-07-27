@@ -44,6 +44,26 @@ numMix
 cric = {1:"adi",2:"Mali"}
 cric1 = {1:"adi",2:"Mali"}
 dictNum = np.array([cric,cric1])
-dictN
+dictNum
+
+set1 = {1,2,3,4}
+set2 = {5,6,7,8}
+setNum = np.array([set1,set2])
+setNum
+
+# arange(Start,Stop,Step)
+numArray = np.arange(1,20,4)
+numArray
+ 
+
+numArray = np.arange(1,10)
+numArray = np.arange(1,20,4,dtype=float)
+
+numArray
 
 
+numArray = np.arange(20).reshape(4,5)
+numArray
+
+numArray = np.arange(27).reshape(3,3,3)
+numArray
