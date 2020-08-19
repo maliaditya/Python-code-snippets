@@ -1,14 +1,8 @@
 auction = {'Watson' : 'CSK','Raina':'CSK','Dhoni':'CSK','Rohit':'MI','Malinga':'MI','Pandya':'MI'}
 
-CSK = []
+CSK = [a for a in auction if auction[a] == 'CSK']
 
-MI = []
-
-for a in auction:
-    if auction[a] == 'CSK':
-        CSK.append(a)
-    else:
-        MI.append(a)
+MI = [a for a in auction if auction[a] == 'MI']
 
 print(CSK)
 print(MI)

@@ -1,8 +1,7 @@
 import array as arr
-gen = range(1,10,2)
+gen_exp = (a**2 for a in range(10) if a %2 != 0)
+print(type(gen_exp))
 
-squares = [a*a for a in list(gen)]
-
-array = arr.array('i',(squares))
+array = arr.array('i',(gen_exp))
 
 print(array)
