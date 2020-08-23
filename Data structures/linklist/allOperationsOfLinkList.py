@@ -1,3 +1,5 @@
+import time
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -50,7 +52,6 @@ class LinkList:
         for a in range(position):
             prevNode = node
             node = node.link
-
         prevNode.link = newNode
         newNode.link = node
 
@@ -59,54 +60,68 @@ class LinkList:
         for a in range(position):
             prevNode = node
             node = node.link
-
         prevNode.link = node.link
-
 
 
 linklist = LinkList()
 
-print("before insertion at start:")
-print()
-
-linklist.insertInList(Node("Python"))
-linklist.insertInList(Node("Java"))
-linklist.insertInList(Node("C"))
-linklist.insertInList(Node("CPP"))
-linklist.displayList()
-print()
-print("After insertion at start:")
-print()
-linklist.insertAtStart(Node("Javascript"))
-linklist.displayList()
-
-print()
-print("After deletion at end:")
-linklist.deletAtEnd()
-print()
-linklist.displayList()
 
 
-print()
-print("After deletion at start:")
-linklist.deleteAtStart()
-print()
-linklist.displayList()
+class Switch:
+    def __init__(self,case):
+        self.case = getattr(self,"case_"+ case,"Wrong Choice")()
+        
+    
+    def case_1(self):
+        return linklist.insertInList(Node(input("-> Enter the data to be inserted: ")))
+        
+    def case_2(self):
+        return linklist.insertAtStart(Node(input("-> Enter the data to be inserted: ")))
+        
+    def case_3(self):
+        return linklist.insertAtSpecificPosition(Node(input("-> Enter the data to be inserted: ")),int(input("-> Enter the location for the data to be inserted: ")) )
+
+    def case_4(self):
+        return linklist.deletAtEnd()
+
+    def case_5(self):
+        return linklist.deleteAtStart()
+
+    def case_6(self):
+        return linklist.deleteAtSpecific(int(input("-> Enter the location for the data to be inserted: ")))
+
+    def case_7(self):
+        return linklist.displayList()
+        
 
 
-print()
-print("After insertion at specific position no 2:")
-linklist.insertAtSpecificPosition(Node("Ruby"),2) #python,java,ruby ,c
-print()
-linklist.displayList()
 
+n = 0
+while n != 8:
+    print()
+    print("1. Insert at end.")
+    print("2. Insert at start.")
+    print("3. Insert at specific location.")
+    print("4. Delete at end.")
+    print("5. Delete at start.")
+    print("6. Delete at specific location.")
+    print("7. Display List.")
+    print("8. Exit.")
+    print()
 
-print()
-print("After deletion at specific position no 1:")
-linklist.deleteAtSpecific(1) #python,ruby ,c
-print()
-linklist.displayList()
+    a = input("-> Enter your choice: ")
 
+    print()
+
+    if int(a) == 8:
+        print("**** Thankyou ****")
+        break
+    elif int(a) >=8:
+        print("###### Wrong Choice #######")
+        time.sleep(0.5)
+        continue
+    else:
+        Switch(a)
 
 
 
