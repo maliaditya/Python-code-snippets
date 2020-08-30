@@ -1,31 +1,29 @@
+
+# Creating A Doubly Linked List Node  
 class Node:
     def __init__(self,data):
-        self.prev = None
-        self.data =  data
         self.next = None
+        self.data = data
+        self.prev = None
 
 
-class DoublyLinkedList:
+class DoublyLinkList:
     def __init__(self):
         self.head = None
 
-    def insertAtEnd(self,newNode):
+    def insert_at_end(self,newNode):
         if self.head is None:
             self.head = newNode
         else:
-            lastNode = self.head
-            prevNode = self.head
+            lastnode = self.head
             while True:
-                if lastNode.next is None:
+                if lastnode.next is None:
                     break
-                prevNode = lastNode
-                lastNode = lastNode.next  
-            lastNode.next = newNode
-            if prevNode is self.head:
-                prevNode.prev = None
-            newNode.prev = prevNode
-            
-    def displayLinkList(self):
+                lastnode = lastnode.next
+            lastnode.next = newNode
+            newNode.prev = lastnode
+
+    def display_list(self):
         lastnode = self.head
         while True:
             if lastnode.next is None:
@@ -34,7 +32,7 @@ class DoublyLinkedList:
             print(lastnode.data)
             lastnode = lastnode.next
 
-    def displayRevesered(self):
+    def display_reverse_list(self):
         lastnode = self.head
         while True:
             if lastnode.next is None:
@@ -42,30 +40,25 @@ class DoublyLinkedList:
             lastnode = lastnode.next
         while True:
             if lastnode.prev is None:
-                print(lastnode.data)    
+                print(lastnode.data)
                 break
             print(lastnode.data)
             lastnode = lastnode.prev
 
-        
-       
-        
+dll = DoublyLinkList()
+dll.insert_at_end(Node("Aditya"))
+dll.insert_at_end(Node("Aadesh"))
+dll.insert_at_end(Node("Drumil"))
+dll.insert_at_end(Node("Kundan"))
+dll.display_list()
+print("Reversed List")
+dll.display_reverse_list()
 
+        
     
-newNode = Node('Aditya')
-dll = DoublyLinkedList()
-dll.insertAtEnd(newNode)
-newNode = Node('Aadesh')
-dll.insertAtEnd(newNode)
+        
 
-newNode = Node('Drumil')
-dll.insertAtEnd(newNode)
+#Creating object of Node Class
 
-newNode = Node('Kundan')
-dll.insertAtEnd(newNode)
-
-#dll.displayLinkList()
-print(dll.head.data)
-print(dll.head.next.data)
-print(dll.head.next.next.data)
-print(dll.head.next.next.next.prev.data)
+dll = DoublyLinkList()
+dll.insert_at_end(Node("Aditya"))
