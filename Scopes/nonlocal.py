@@ -1,12 +1,10 @@
-def tester(start):
-    state = start
-    def nested(label):
+def outer():
+    	x = 10
+	def inner():
+		nonlocal x
+		x += 1
 
-        print(label,state)
+		print(x)
+	inner()
 
-    return nested
-
-f = tester(0)
-f('spam')
-
-f('ham')
+outer()
