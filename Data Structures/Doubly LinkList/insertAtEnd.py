@@ -25,7 +25,6 @@ class DoublyLinkedList:
                 prevNode.prev = None
             newNode.prev = prevNode
             
-
     def displayLinkList(self):
         lastnode = self.head
         while True:
@@ -65,5 +64,8 @@ dll.insertAtEnd(newNode)
 newNode = Node('Kundan')
 dll.insertAtEnd(newNode)
 
-dll.displayLinkList()
-dll.displayRevesered()
+#dll.displayLinkList()
+print(dll.head.data)
+print(dll.head.next.data)
+print(dll.head.next.next.data)
+print(dll.head.next.next.next.prev.data)
