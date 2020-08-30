@@ -69,6 +69,10 @@ class DoublyLinkList:
         lastnode.prev.next = None
         lastnode.prev=None
 
+    def delete_at_front(self):
+        self.head = self.head.next
+        self.head.prev = None
+
         
 
 
@@ -114,6 +118,15 @@ print("delete at end")
 print()
 dll.delete_at_end()
 dll.display_list()
+
+
+
+print()
+print("delete at front")
+print()
+dll.delete_at_front()
+dll.display_list()
+
 
 
 
