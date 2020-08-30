@@ -24,6 +24,8 @@ class DoublyLinkList:
             newNode.prev = lastnode
 
     def display_list(self):
+        if self.head is None:
+            print('EMPTY LIST')
         lastnode = self.head
         while True:
             if lastnode.next is None:
@@ -72,6 +74,14 @@ class DoublyLinkList:
     def delete_at_front(self):
         self.head = self.head.next
         self.head.prev = None
+
+    def delete_at_middle(self,position):
+        posi = self.head
+        for a in range(position):
+            posi = posi.next
+        posi.prev.next = posi.next
+        posi.next.prev = posi.prev
+
 
         
 
@@ -128,6 +138,12 @@ dll.delete_at_front()
 dll.display_list()
 
 
+
+print()
+print("delete at specific")
+print()
+dll.delete_at_middle(4)
+dll.display_list()
 
 
 
