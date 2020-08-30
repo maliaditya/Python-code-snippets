@@ -50,6 +50,20 @@ class DoublyLinkList:
         self.head.prev = newNode
         self.head = newNode
 
+    def insert_in_middle(self,newnode,position):
+        posi = self.head
+        for a in range(position):
+            secondlast = posi
+            posi = posi.next
+        secondlast.next = newnode
+        newnode.prev=secondlast
+        newnode.next = posi
+        posi.prev = newnode
+
+
+
+        
+
 
 dll = DoublyLinkList()
 dll.insert_at_end(Node("Aditya"))
@@ -68,6 +82,20 @@ print("Add At Front")
 print()
 dll.insert_At_Front(Node("Shubham"))
 dll.insert_At_Front(Node("Sujit"))
+dll.display_list()
+print()
+print("Reversed List")
+print()
+
+dll.display_reverse_list()
+
+
+
+print()
+print("Add At Middle")
+print()
+dll.insert_in_middle(Node("Shirke"),4)
+dll.insert_in_middle(Node("Varun"),5)
 dll.display_list()
 print()
 print("Reversed List")
