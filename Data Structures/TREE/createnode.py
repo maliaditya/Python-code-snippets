@@ -86,7 +86,7 @@ class Tree:
         """
         if root is not None:
             self.traverseInorder(root.left)
-            print(root.data)
+            print(root.data, end = " ")
             self.traverseInorder(root.right)
 
     def traversePreorder(self, root):
@@ -94,7 +94,7 @@ class Tree:
         traverse function will print all the node in the tree.
         """
         if root is not None:
-            print(root.data)
+            print(root.data,end = " ")
             self.traversePreorder(root.left)
             self.traversePreorder(root.right)
 
@@ -105,21 +105,21 @@ class Tree:
         if root is not None:
             self.traversePostorder(root.left)
             self.traversePostorder(root.right)
-            print(root.data)
+            print(root.data,end = " ")
 
 
 def main():
     root = None
     tree = Tree()
-    root = tree.insert(root, 10)
+    root = tree.insert(root, 'A')
     print(root)
-    tree.insert(root, 20)
-    tree.insert(root, 30)
-    tree.insert(root, 40)
-    tree.insert(root, 70)
-    tree.insert(root, 60)
-    tree.insert(root, 80)
-
+    tree.insert(root, 'B')
+    tree.insert(root, 'C')
+    tree.insert(root, 'D')
+    tree.insert(root, 'E')
+    tree.insert(root, 'F')
+    tree.insert(root, 'G')
+    
     print("Traverse Inorder")
     tree.traverseInorder(root)
 

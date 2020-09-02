@@ -17,17 +17,28 @@ class Tree:
         if data < rootNode.data:
             rootNode.left = self.insertNode(rootNode.left, data)
         elif data > rootNode.data:
-            rootNode.right = self.insert(rootNode.right, data)
+            rootNode.right = self.insertNode(rootNode.right, data)
 
         return rootNode
 
 
 
-            
+    def traversalInorder(self,root):
+        if root is not None:
+            self.traversalInorder(root.left)
+            print(root.data)
+            self.traversalInorder(root.right)
+
 
 
 
 root = None
 tree = Tree()
-root =  tree.insertNode(root,10)
+root =  tree.insertNode(root,1)
 print(root.data)
+tree.insertNode(root,2)
+tree.insertNode(root,3)
+tree.insertNode(root,4)
+tree.insertNode(root,5)
+tree.traversalInorder(root)
+
