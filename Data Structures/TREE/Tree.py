@@ -14,19 +14,19 @@ class Tree:
         if rootNode is None:
             return self.createNode(data)
         
-        if data < rootNode.data:
+        if data < rootNode.data:f
             rootNode.left = self.insertNode(rootNode.left, data)
         elif data > rootNode.data:
             rootNode.right = self.insertNode(rootNode.right, data)
 
         return rootNode
 
-
+    def delete
 
     def traversalInorder(self,root):
         if root is not None:
             self.traversalInorder(root.left)
-            print(root.data)
+            print(root.data, end =" ")
             self.traversalInorder(root.right)
 
 
@@ -35,7 +35,7 @@ class Tree:
 root = None
 tree = Tree()
 root =  tree.insertNode(root,1)
-print(root.data)
+print("root",root.data)
 tree.insertNode(root,2)
 tree.insertNode(root,3)
 tree.insertNode(root,4)
