@@ -1,0 +1,6 @@
+Notice that the print uses end='' here to suppress adding a \n, because line strings
+already have one (without this, our output would be double-spaced). This is considered
+the best way to read text files line by line today, for three reasons: it’s the simplest to
+code, might be the quickest to run, and is the best in terms of memory usage. The older,
+original way to achieve the same effect with a for loop is to call the file readlines method
+to load the file’s content into memory as a list of line strings:
