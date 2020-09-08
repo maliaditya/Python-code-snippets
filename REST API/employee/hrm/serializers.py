@@ -7,3 +7,4 @@ class UserSerializers(serializers.ModelSerializer):
         model = Users
         #fields = ('name','employee_id')
         fields = '__all__'
+        
