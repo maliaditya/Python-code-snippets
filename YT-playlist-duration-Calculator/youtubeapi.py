@@ -3,9 +3,9 @@ import os
 import re
 from datetime import timedelta
 
-api_key = os.environ.get('YT_API')
 
-youtube = build('youtube','v3',developerKey = api_key)
+
+youtube = build('youtube','v3',developerKey = 'AIzaSyDidtk31_vf9nCbcebnuwn9SJjUWb0VHCY')
 
 nextPageToken = None
 
@@ -18,13 +18,14 @@ total_secs = 0
 while True:
     request = youtube.playlistItems().list(
         part='contentDetails',
-        playlistId='PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe',
+        playlistId='PLsyeobzWxl7qtP8Lo9TReqUMkiOp446cV',
         maxResults = 50,
         pageToken=nextPageToken
     )
 
 
     response = request.execute()
+  
     vid_ids = []
     for i in response['items']:
         vid_ids.append(i['contentDetails']['videoId'])
@@ -67,5 +68,6 @@ total_secs = int(total_secs)
 
 minutes,seconds = divmod(total_secs,60)
 hours,minutes = divmod(minutes,60)
-
+v = response['pageInfo']
+print(v['totalResults'])
 print(f'{hours}:{minutes}:{seconds}')

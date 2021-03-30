@@ -11,17 +11,17 @@ today = date.today()
 d2 = today.strftime(" %d-%B-%Y")
 
    
-fromaddr = "write you email address here"
-toaddr = "write senders email address here"
+fromaddr = "adityamali33@gmail.com"
+toaddr = "adityamali33@gmail.com"
    
 # instance of MIMEMultipart 
 msg = MIMEMultipart() 
   
 # storing the senders email address   
-msg['From'] = "write your email address here"
+msg['From'] = "adityamali33@gmail.com"
   
 # storing the receivers email address  
-msg['To'] = "write senders email address here"
+msg['To'] = "adityamali33@gmail.com"
   
 # storing the subject  
 msg['Subject'] = "DailyFlash:Solutions:"+str(d2)
@@ -33,7 +33,7 @@ body = ""
 msg.attach(MIMEText(body, 'plain')) 
   
 # open the file to be sent  
-filename = "solutions.zip"
+filename = "solutions"
 path = str(os.getcwd())+"/"+filename
 attachment = open( path , "rb") 
   
@@ -58,7 +58,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
   
 # Authentication 
-s.login(fromaddr, "write your password here") 
+s.login(fromaddr, "adityamali33@gmail.com") 
   
 # Converts the Multipart msg into a string 
 text = msg.as_string() 
