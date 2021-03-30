@@ -1,7 +1,6 @@
 class Facebook:
-    
     def __init__(self):
-        print("Founder Zukerberg")
+            print("Founder Zukerberg")
 
     def chatting(self):
         print("Chat with friends")
@@ -9,17 +8,22 @@ class Facebook:
     def sharePics(self):
         print("Post Images")
 
-class Instagram(Facebook):
 
-    def __init__(self):
-        print("Parent Company Facebook")
+class Tiktok:
+
+    def create(self):
+        print("Create faltu videos")
+
+
+
+class Instagram(Facebook, Tiktok):
 
     def Reels(self):
         print("Post your Reels")
 
-    
+
+
 
 obj = Instagram()
 obj.chatting()
-obj.sharePics()
-obj.Reels()
+obj.create()

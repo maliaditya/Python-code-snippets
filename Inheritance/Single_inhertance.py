@@ -21,13 +21,7 @@ class Computer(College):
         print("The Head of Department of {} of {} is {}".format(self.dept,self.cname,self.hod))
 
     
-college_info = College("ZCOER","Narhe,pune","SPPU","Dr.A.M.Kate",)
-comp_dept = Computer("ZCOER","Narhe,pune","SPPU","Dr.A.M.Kate","Dr.S.M.Sangve","Computer")
-# mech_dept = College("Mechanical","B","35","600")
-# civil_dept = College("Civil","C","20","300") 
 
-college_info.principalname()
+comp_dept = Computer("ZCOER","Narhe,pune","SPPU","Dr.A.M.Kate","Dr.S.M.Sangve","Computer")
 
 comp_dept.comp_hod()
-# mech_dept.ratio()
-# civil_dept.ratio()
